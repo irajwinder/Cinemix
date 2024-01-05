@@ -1,5 +1,5 @@
 //
-//  SearchMusicView.swift
+//  SearchView.swift
 //  Cinemix
 //
 //  Created by Rajwinder Singh on 1/1/24.
@@ -9,11 +9,12 @@ import SwiftUI
 
 enum SearchType: String, CaseIterable {
     case music = "Music"
-    case movie = "Movie"
+    case movie = "Movies"
+    case series = "Series"
 }
 
-struct SearchMusicView: View {
-    @StateObject private var stateObject = SearchMusicIntent()
+struct SearchView: View {
+    @StateObject private var stateObject = SearchIntent()
     @State private var navigateToListView = false
     @State private var showAlert = false
     @State private var alert: Alert?
@@ -69,10 +70,13 @@ struct SearchMusicView: View {
         case .movie:
             stateObject.searchMovies()
             navigateToListView = true
+        case .series:
+            stateObject.searchSeries()
+            navigateToListView = true
         }
     }
 }
 
 #Preview {
-    SearchMusicView()
+    SearchView()
 }

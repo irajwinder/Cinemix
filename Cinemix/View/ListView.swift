@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListView: View {
     @StateObject private var stateObject = MusicListIntent()
-    @ObservedObject var observedObject: SearchMusicIntent
+    @ObservedObject var observedObject: SearchIntent
     
     @State private var showAlert = false
     @State private var alert: Alert?
@@ -53,5 +53,5 @@ struct ListView: View {
 }
 
 #Preview {
-    ListView(observedObject: SearchMusicIntent())
+    ListView(observedObject: SearchIntent())
 }

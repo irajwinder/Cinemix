@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            SearchMusicView()
+            SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }

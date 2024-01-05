@@ -20,7 +20,7 @@ struct MovieResponse: Codable {
     let id: String
     let year: Int
     let imdbid: String
-    let imdbLink: URL
+    let imdb_link: URL
 }
 
 // MARK: - SeriesResponse

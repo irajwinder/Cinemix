@@ -1,5 +1,5 @@
 //
-//  SearchMusicIntent.swift
+//  SearchIntent.swift
 //  Cinemix
 //
 //  Created by Rajwinder Singh on 1/1/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class SearchMusicIntent: ObservableObject {
+class SearchIntent: ObservableObject {
     @Published var musicResponse: [Track] = []
     @Published var movieResponse: [MovieResponse] = []
     @Published var seriesResponse: [SeriesResponse] = []
