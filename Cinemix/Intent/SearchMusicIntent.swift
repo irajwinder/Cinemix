@@ -9,7 +9,8 @@ import SwiftUI
 
 class SearchMusicIntent: ObservableObject {
     @Published var musicResponse: [Track] = []
-    @Published var movieResponse: [MovieModel] = []
+    @Published var movieResponse: [MovieResponse] = []
+    @Published var seriesResponse: [SeriesResponse] = []
     
     @Published var searchText = ""
     @Published var selectedSearchType = SearchType.music
@@ -21,19 +22,32 @@ class SearchMusicIntent: ObservableObject {
                 return
             }
             DispatchQueue.main.async {
-                self.musicResponse.append(contentsOf: response.data)
+                self.musicResponse = response.data
             }
-            
-            //            print(response.data)
-            //            print(response.total)
-            //            print(response.next)
-            //            for track in response.data {
-            //                print(track.artist)
-            //            }
         }
     }
     
     func searchMovies() {
-        
+        NetworkManager.sharedInstance.searchMovies { [weak self] response in
+            guard let self = self, let response = response else {
+                print("Failed to fetch movies")
+                return
+            }
+            DispatchQueue.main.async {
+                self.movieResponse = response
+            }
+        }
+    }
+    
+    func searchSeries() {
+        NetworkManager.sharedInstance.searchSeries { [weak self] response in
+            guard let self = self, let response = response else {
+                print("Failed to fetch Series")
+                return
+            }
+            DispatchQueue.main.async {
+                self.seriesResponse = response
+            }
+        }
     }
 }

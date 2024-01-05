@@ -6,14 +6,23 @@
 //
 
 struct APIConstants {
-    static let baseURL = ""
-    static let headers = [
+    static let musicBaseURL = "https://deezerdevs-deezer.p.rapidapi.com/search?q="
+    static let musicHeader = [
         "X-RapidAPI-Key": "ec6163ac92msh5a910695b398cadp1ff052jsnecb1c1f6797d",
         "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
     ]
+    
+    static let movieBaseURL = "https://imdb-top-100-movies.p.rapidapi.com/"
+    static let moviesHeader = [
+        "X-RapidAPI-Key": "ec6163ac92msh5a910695b398cadp1ff052jsnecb1c1f6797d",
+        "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com"
+    ]
+    static let seriesBaseURL = "https://imdb-top-100-movies.p.rapidapi.com/series/"
+    static let httpMethod = "GET"
 }
 
 struct FileManagerConstants {
     static let folderName = "BookmarkedMusic"
     static let fileExtension = ".jpg"
+    static let musicExtension = ".mp3"
 }

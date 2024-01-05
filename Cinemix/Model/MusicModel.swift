@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - MusicModelResponse
+// MARK: - MusicResponse
 struct MusicResponse: Codable {
     let data: [Track]
     let total: Int
