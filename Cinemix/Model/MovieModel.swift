@@ -9,34 +9,34 @@ import Foundation
 
 // MARK: - MovieResponse
 struct MovieResponse: Codable {
-    let rank: Int
-    let title: String
-    let description: String
-    let image: URL
-    let bigImage: URL
+    let rank: Int?
+    let title: String?
+    let description: String?
+    let image: URL?
+    let bigImage: URL?
     let genre: [String]
-    let thumbnail: URL
-    let rating: String
-    let id: String
-    let year: Int
-    let imdbid: String
-    let imdb_link: URL
+    let thumbnail: URL?
+    let rating: String?
+    let id: String?
+    let year: Int?
+    let imdbid: String?
+    let imdb_link: URL?
 }
 
 // MARK: - SeriesResponse
 struct SeriesResponse: Codable {
-    let rank: Int
-    let title: String
-    let description: String
-    let image: URL
-    let big_image: URL
+    let rank: Int?
+    let title: String?
+    let description: String?
+    let image: URL?
+    let big_image: URL?
     let genre: [String]
-    let thumbnail: URL
-    let rating: Double
-    let id: String
-    let year: String
-    let imdbid: String
-    let imdb_link: URL
+    let thumbnail: URL?
+    let rating: Double?
+    let id: String?
+    let year: String?
+    let imdbid: String?
+    let imdb_link: URL?
 }
 
 //[

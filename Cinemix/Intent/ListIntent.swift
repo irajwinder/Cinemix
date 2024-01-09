@@ -1,5 +1,5 @@
 //
-//  MusicListIntent.swift
+//  ListIntent.swift
 //  Cinemix
 //
 //  Created by Rajwinder Singh on 1/2/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MusicListIntent: ObservableObject {
+class ListIntent: ObservableObject {
     func saveBookmark<T: Codable>(item: T) {
         guard let imageURL = URL(string: getImageURL(item: item)) else {
             return

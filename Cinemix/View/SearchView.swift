@@ -23,14 +23,14 @@ struct SearchView: View {
         NavigationStack {
             VStack(spacing: 20) {
                 HStack {
-                    CustomSearchField(placeholder: "Enter search text", searchText: $stateObject.searchText)
+                    CustomSearchField(placeholder: SearchConstants.placeholderText, searchText: $stateObject.searchText)
                     
                     CustomSearchButton {
                         validateSearch()
                     }
                 }
                 
-                Picker("Search Type", selection: $stateObject.selectedSearchType) {
+                Picker(SearchConstants.pickerText, selection: $stateObject.selectedSearchType) {
                     ForEach(SearchType.allCases, id: \.self) { type in
                         Text(type.rawValue)
                     }
@@ -38,7 +38,7 @@ struct SearchView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .frame(width: 300)
             }
-            .navigationBarTitle("Search")
+            .navigationBarTitle(SearchConstants.navigationText)
             .alert(isPresented: $showAlert) {
                 alert!
             }
@@ -57,10 +57,12 @@ struct SearchView: View {
     }
     
     func validateSearch() {
-        guard Validation.isValidName(stateObject.searchText) else {
-            showAlert = true
-            alert = Validation.showAlert(title: "Error", message: "Enter Search Text")
-            return
+        if stateObject.selectedSearchType == .music {
+            guard Validation.isValidName(stateObject.searchText) else {
+                showAlert = true
+                alert = Validation.showAlert(title: SearchConstants.errorTitle, message: SearchConstants.errorMessage)
+                return
+            }
         }
         
         switch stateObject.selectedSearchType {

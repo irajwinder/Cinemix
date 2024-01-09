@@ -25,7 +25,7 @@ struct BookmarkView: View {
             .onAppear {
                 stateObject.fetchBookmarks()
             }
-            .navigationBarTitle("Bookmarks")
+            .navigationBarTitle(ListConstants.navigationTextBookmark)
         }
     }
 }

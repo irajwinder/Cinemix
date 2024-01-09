@@ -18,7 +18,7 @@ class SearchIntent: ObservableObject {
     func searchMusic() {
         NetworkManager.sharedInstance.searchMusic(artistName: searchText) { [weak self] response in
             guard let self = self, let response = response else {
-                print("Failed to fetch music")
+                print("Failed to fetch Music")
                 return
             }
             DispatchQueue.main.async {
@@ -30,7 +30,7 @@ class SearchIntent: ObservableObject {
     func searchMovies() {
         NetworkManager.sharedInstance.searchMovies { [weak self] response in
             guard let self = self, let response = response else {
-                print("Failed to fetch movies")
+                print("Failed to fetch Movies")
                 return
             }
             DispatchQueue.main.async {

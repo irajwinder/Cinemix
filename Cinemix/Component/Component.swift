@@ -7,6 +7,26 @@
 
 import SwiftUI
 
+struct CustomPrimaryText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.headline)
+            .foregroundColor(.primary)
+    }
+}
+
+struct CustomSecondayText: View {
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .font(.subheadline)
+            .foregroundColor(.secondary)
+    }
+}
+
 struct CustomSearchField: View {
     var placeholder: String
     @Binding var searchText: String
@@ -43,6 +63,19 @@ struct CustomBookmarkButton: View {
                 .foregroundColor(.blue)
                 .imageScale(.large)
                 .padding(8)
+        }
+    }
+}
+
+struct CustomPlayButton: View {
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "play.circle.fill")
+                .resizable()
+                .foregroundColor(.blue)
+                .frame(width: 40, height: 40)
         }
     }
 }
